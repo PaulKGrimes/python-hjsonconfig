@@ -71,7 +71,7 @@ Installation
 
 ::
 
-    pip install hjsonconfig
+    pip install hjsonConfig
 
 Documentation
 =============

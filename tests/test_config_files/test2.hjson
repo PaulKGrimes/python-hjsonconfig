@@ -1,0 +1,5 @@
+{
+    "overrideMe":0.2,
+    "overrideMe2":"String set in test2.hjson"
+    "config-file":"test3.hjson"
+}

@@ -1,0 +1,12 @@
+{
+    "test1":"Test String 1",
+    "test2":"Test String 2",
+    "int1":1,
+    "int4":4,
+    "float1":0.5,
+    "dict1":{
+        "dict1key1":"dictValue",
+        "dict1key2":"anotherDictValue"
+    },
+    "overrideMe":0.1
+}
