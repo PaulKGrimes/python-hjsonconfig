@@ -44,6 +44,7 @@ install:
   - easy_install --version
   - pip --version
   - tox --version
+  - python setup.py install
 script:
   - tox -v
 after_failure:

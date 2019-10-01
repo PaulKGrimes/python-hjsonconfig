@@ -3,9 +3,10 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import jsonmerge
-import hjson
 from pprint import pprint
+
+import hjson
+import jsonmerge
 from pkg_resources import resource_filename
 
 
