@@ -5,9 +5,9 @@ from __future__ import print_function
 
 import jsonmerge
 import hjson
-import copy
 from pprint import pprint
 from pkg_resources import resource_filename
+
 
 def merge(base, head):
     """Merge two hjsonConfig objects together, using jsonmerge.merge. Keys in
@@ -23,7 +23,7 @@ def merge(base, head):
         An HjsonConfig object containing the merged key:value pairs
     """
     try:
-        if base !=None:
+        if base is not None:
             verbose = base.verbose or head.verbose
         else:
             verbose = head.verbose
@@ -64,7 +64,7 @@ class HjsonConfig(hjson.OrderedDict):
         super(hjson.OrderedDict, self).__init__(*args, **kwds)
         self.verbose = verbose
         self.filename = filename
-        if filename != None:
+        if filename is not None:
             if self.verbose:
                 print("HjsonConfig.__init__: Initializing from {:s}".format(filename))
             self.readFile(filename)
@@ -99,7 +99,7 @@ class HjsonConfig(hjson.OrderedDict):
                 # Look in same directory as current file
                 if self.verbose:
                     print("HjsonConfig._readFile: Couldn't find config file: ", filename)
-                if self.filename != None:
+                if self.filename is not None:
                     if self.verbose:
                         print("HjsonConfig._readFile: looking in LabEqupiment/config")
                     newFileName = resource_filename("LabEquipment", "/config/{:s}".format(filename))
@@ -126,7 +126,7 @@ class HjsonConfig(hjson.OrderedDict):
 
         Args:
             odict: an OrderedDict or HjsonConfig object"""
-        if odict != None:
+        if odict is not None:
             self.clear()
             for k in odict.keys():
                 self[k] = odict[k]
@@ -139,12 +139,11 @@ class HjsonConfig(hjson.OrderedDict):
         Args:
             filename: a filename to read the config file from"""
         # Have to delete data from self and then copy data from readFile return value.
-        if self.filename == None:
+        if self.filename is None:
             if self.verbose:
                 print("HjsonConfig.readFile: setting filename: ", filename)
             self.filename = filename
         self._copyIn(self._readFile(filename))
-
 
 
     def importConfigFiles(self):
@@ -158,7 +157,7 @@ class HjsonConfig(hjson.OrderedDict):
         # Try and parse a config-file if it is passed to us
         configFile = None
         try:
-            if self["config-file"] != None:
+            if self["config-file"] is not None:
                 configFile = self["config-file"]
                 if self.verbose:
                     print("HjsonConfig.importConfigFiles: Import from {:s}".format(configFile))
@@ -168,9 +167,9 @@ class HjsonConfig(hjson.OrderedDict):
                 print("HjsonConfig.importConfigFiles: No config-files to import")
             configFile = None
 
-        if configFile != None:
+        if configFile is not None:
             # Might be a list of fileNames or a single filename
-            if type(configFile) is type(list()):
+            if isintance(configFile, list):
                 if self.verbose:
                     print("HjsonConfig.importConfigFiles: Importing config-files {:s}".format(configFile))
                 fileConfig = HjsonConfig(verbose=self.verbose)
@@ -187,13 +186,13 @@ class HjsonConfig(hjson.OrderedDict):
             # We will move imported config-files to "imported-config-file"
             self["config-file"] = None
             try:
-                 self["imported-config-file"].append(configFile)
+                self["imported-config-file"].append(configFile)
             except KeyError:
                 self["imported-config-file"] = [configFile]
 
-
             # clear self and copy the merged ODict from jsonmerge in
             self._copyIn(jsonmerge.merge(fileConfig, self))
+
 
 def main():
     """Creates an empty, verbose HjsonConfig object"""
