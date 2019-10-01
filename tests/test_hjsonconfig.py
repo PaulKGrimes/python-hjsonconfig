@@ -17,6 +17,7 @@ def test_main():
     config = hjsonConfig.main()
     assert isinstance(config, hjsonConfig.hjsonConfig)
 
+
 @pytest.mark.datafiles(os.path.join(FIXTURE_DIR, 'test.hjson'))
 def test_loading_file(datafiles):
     config = hjsonConfig.hjsonConfig(datafiles)
