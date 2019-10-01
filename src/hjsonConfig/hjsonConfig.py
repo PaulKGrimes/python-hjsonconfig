@@ -145,7 +145,6 @@ class HjsonConfig(hjson.OrderedDict):
             self.filename = filename
         self._copyIn(self._readFile(filename))
 
-
     def importConfigFiles(self):
         """Merges in referenced config files if present.
 
@@ -169,7 +168,7 @@ class HjsonConfig(hjson.OrderedDict):
 
         if configFile is not None:
             # Might be a list of fileNames or a single filename
-            if isintance(configFile, list):
+            if isinstance(configFile, list):
                 if self.verbose:
                     print("HjsonConfig.importConfigFiles: Importing config-files {:s}".format(configFile))
                 fileConfig = HjsonConfig(verbose=self.verbose)
@@ -199,6 +198,7 @@ def main():
     config = HjsonConfig(verbose=True)
 
     return config
+
 
 if __name__ == "__main__":
     main()

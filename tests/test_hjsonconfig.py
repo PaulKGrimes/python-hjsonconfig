@@ -25,7 +25,7 @@ def test_loading_file(datafiles):
     assert isinstance(config["int1"], int)
     assert config["int1"] == 1
     assert config["int4"] == 4
-    assert isinstance(config["float1", float)
+    assert isinstance(config["float1"], float)
     assert config["float1"] == 0.5
     assert isinstance(config["dict1"], hjsonConfig.hjson.OrderedDict)
     assert config["overrideMe"] == 0.1
