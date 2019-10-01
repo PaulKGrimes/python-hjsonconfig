@@ -41,6 +41,8 @@ default_context:
     package_name:              'hjsonConfig'
     project_name:              'hjsonConfig'
     project_short_description: 'A package for reading config files written in hjson, with recursive includes of additional files.'
+    pypi_badge:                'no'
+    pypi_disable_upload        'yes'
     release_date:              'today'
     repo_name:                 'python-hjsonconfig'
     requiresio:                'yes'

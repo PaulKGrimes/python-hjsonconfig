@@ -39,25 +39,9 @@ Overview
     :alt: Coverage Status
     :target: https://codecov.io/github/paulkgrimes/python-hjsonconfig
 
-.. |version| image:: https://img.shields.io/pypi/v/hjsonconfig.svg
-    :alt: PyPI Package latest release
-    :target: https://pypi.org/project/hjsonconfig
-
 .. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-hjsonconfig/v0.0.0.svg
     :alt: Commits since latest release
     :target: https://github.com/paulkgrimes/python-hjsonconfig/compare/v0.0.0...master
-
-.. |wheel| image:: https://img.shields.io/pypi/wheel/hjsonconfig.svg
-    :alt: PyPI Wheel
-    :target: https://pypi.org/project/hjsonconfig
-
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/hjsonconfig.svg
-    :alt: Supported versions
-    :target: https://pypi.org/project/hjsonconfig
-
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/hjsonconfig.svg
-    :alt: Supported implementations
-    :target: https://pypi.org/project/hjsonconfig
 
 
 .. end-badges
