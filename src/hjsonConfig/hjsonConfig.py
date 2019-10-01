@@ -10,7 +10,7 @@ from pprint import pprint
 from pkg_resources import resource_filename
 
 def merge(base, head):
-    """Merge two HjsonConfig objects together, using jsonmerge.merge. Keys in
+    """Merge two hjsonConfig objects together, using jsonmerge.merge. Keys in
     head overwrite duplicate keys in base.
 
     Args:

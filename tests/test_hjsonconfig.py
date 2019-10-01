@@ -3,7 +3,7 @@ import os
 import pytest
 
 import hjsonConfig
-import hjson
+
 
 
 FIXTURE_DIR = os.path.join(
@@ -26,5 +26,5 @@ def test_loading_file(datafiles):
     assert config["int4"] == 4
     assert config["float1"] is type (0.5)
     assert config["float1"] == 0.5
-    assert config["dict1"] is type(hjson.OrderedDict())
+    assert config["dict1"] is type(hjsonConfig.hjson.OrderedDict())
     assert config["overrideMe"] == 0.1
