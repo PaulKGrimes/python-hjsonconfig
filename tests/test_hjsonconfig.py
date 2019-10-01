@@ -13,13 +13,13 @@ FIXTURE_DIR = os.path.join(
 
 def test_main():
     """Tries to run hjsonConfig.main(), which creates and returns an empty and verbose
-    HjsonConfig object"""
+    hjsonConfig object"""
     config = hjsonConfig.main()
-
+    assert isinstance(config, hjsonConfig.hjsonConfig)
 
 @pytest.mark.datafiles(os.path.join(FIXTURE_DIR, 'test.hjson'))
 def test_loading_file(datafiles):
-    config = hjsonConfig.HjsonConfig(datafiles)
+    config = hjsonConfig.hjsonConfig(datafiles)
     assert config["test1"] == "Test String 1"
     assert config["test2"] == "Test String 2"
     assert isinstance(config["int1"], int)
