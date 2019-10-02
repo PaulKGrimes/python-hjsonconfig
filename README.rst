@@ -31,9 +31,9 @@ Overview
   :target: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig
   :alt: Coverage Status
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-hjsonconfig/v0.0.2.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-hjsonconfig/v0.0.3.svg
     :alt: Commits since latest release
-    :target: https://github.com/paulkgrimes/python-hjsonconfig/compare/v0.0.2...master
+    :target: https://github.com/paulkgrimes/python-hjsonconfig/compare/v0.0.3...master
 
 
 .. end-badges
