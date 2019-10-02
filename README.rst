@@ -10,8 +10,8 @@ Overview
     * - docs
       - |docs|
     * - tests
-      - | |travis| |appveyor| |requires|
-        | |coveralls| |codecov|
+      - | |travis| |requires|
+        | |codecov|
     * - package
       - | |version| |wheel| |supported-versions| |supported-implementations|
         | |commits-since|
@@ -23,21 +23,13 @@ Overview
     :alt: Travis-CI Build Status
     :target: https://travis-ci.org/paulkgrimes/python-hjsonconfig
 
-.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/paulkgrimes/python-hjsonconfig?branch=master&svg=true
-    :alt: AppVeyor Build Status
-    :target: https://ci.appveyor.com/project/paulkgrimes/python-hjsonconfig
+.. |requires| image:: https://requires.io/github/PaulKGrimes/python-hjsonconfig/requirements.svg?branch=master
+     :target: https://requires.io/github/PaulKGrimes/python-hjsonconfig/requirements/?branch=master
+     :alt: Requirements Status
 
-.. |requires| image:: https://requires.io/github/paulkgrimes/python-hjsonconfig/requirements.svg?branch=master
-    :alt: Requirements Status
-    :target: https://requires.io/github/paulkgrimes/python-hjsonconfig/requirements/?branch=master
-
-.. |coveralls| image:: https://coveralls.io/repos/paulkgrimes/python-hjsonconfig/badge.svg?branch=master&service=github
-    :alt: Coverage Status
-    :target: https://coveralls.io/r/paulkgrimes/python-hjsonconfig
-
-.. |codecov| image:: https://codecov.io/github/paulkgrimes/python-hjsonconfig/coverage.svg?branch=master
-    :alt: Coverage Status
-    :target: https://codecov.io/github/paulkgrimes/python-hjsonconfig
+.. |codecov| .. image:: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig
+  :alt: Coverage Status
 
 .. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-hjsonconfig/v0.0.0.svg
     :alt: Commits since latest release
