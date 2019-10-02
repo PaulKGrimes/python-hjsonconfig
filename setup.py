@@ -25,7 +25,7 @@ def read(*names, **kwargs):
 
 setup(
     name='hjsonconfig',
-    version='0.0.0',
+    version='0.0.2',
     license='MIT license',
     description='A package for reading config files written in hjson, with recursive includes of additional files.',
     long_description='%s\n%s' % (
