@@ -13,8 +13,7 @@ Overview
       - | |travis| |requires|
         | |codecov|
     * - package
-      - | |version| |wheel| |supported-versions| |supported-implementations|
-        | |commits-since|
+      - | |commits-since|
 .. |docs| image:: https://readthedocs.org/projects/python-hjsonconfig/badge/?style=flat
     :target: https://readthedocs.org/projects/python-hjsonconfig
     :alt: Documentation Status
