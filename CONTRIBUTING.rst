@@ -17,8 +17,8 @@ When `reporting a bug <https://github.com/paulkgrimes/python-hjsonconfig/issues>
 Documentation improvements
 ==========================
 
-hjsonConfig could always use more documentation, whether as part of the
-official hjsonConfig docs, in docstrings, or even on the web in blog posts,
+hjsonconfig could always use more documentation, whether as part of the
+official hjsonconfig docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Feature requests and feedback

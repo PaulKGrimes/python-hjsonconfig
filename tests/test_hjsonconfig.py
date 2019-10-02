@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-import hjsonConfig
+import hjsonconfig
 
 FIXTURE_DIR = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
@@ -11,15 +11,15 @@ FIXTURE_DIR = os.path.join(
 
 
 def test_main():
-    """Tries to run hjsonConfig.main(), which creates and returns an empty and verbose
-    hjsonConfig object"""
-    config = hjsonConfig.main()
-    assert isinstance(config, hjsonConfig.hjsonConfig)
+    """Tries to run hjsonconfig.main(), which creates and returns an empty and verbose
+    hjsonconfig object"""
+    config = hjsonconfig.main()
+    assert isinstance(config, hjsonconfig.hjsonconfig)
 
 
 @pytest.mark.datafiles(os.path.join(FIXTURE_DIR, 'test.hjson'))
 def test_loading_file(datafiles):
-    config = hjsonConfig.hjsonConfig(datafiles)
+    config = hjsonconfig.hjsonconfig(datafiles)
     assert config["test1"] == "Test String 1"
     assert config["test2"] == "Test String 2"
     assert isinstance(config["int1"], int)
@@ -27,5 +27,5 @@ def test_loading_file(datafiles):
     assert config["int4"] == 4
     assert isinstance(config["float1"], float)
     assert config["float1"] == 0.5
-    assert isinstance(config["dict1"], hjsonConfig.hjson.OrderedDict)
+    assert isinstance(config["dict1"], hjsonconfig.hjson.OrderedDict)
     assert config["overrideMe"] == 0.1
