@@ -27,7 +27,7 @@ Overview
      :target: https://requires.io/github/PaulKGrimes/python-hjsonconfig/requirements/?branch=master
      :alt: Requirements Status
 
-.. |codecov| .. image:: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig/branch/master/graph/badge.svg
+.. |codecov| image:: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig
   :alt: Coverage Status
 
