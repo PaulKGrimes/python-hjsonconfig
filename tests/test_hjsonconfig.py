@@ -19,9 +19,10 @@ def test_main():
     assert isinstance(config, hjsonconfig.hjsonconfig)
 
 
-@pytest.mark.datafiles(os.path.join(FIXTURE_DIR, 'test.hjson'))
+@pytest.mark.datafiles(FIXTURE_DIR)
 def test_loading_file(datafiles):
-    config = hjsonconfig.hjsonconfig(filename=datafiles)
+    testFile = os.path.join(datafiles, 'test.hjson')
+    config = hjsonconfig.hjsonconfig(filename=testFile)
     assert config["test1"] == "Test String 1"
     assert config["test2"] == "Test String 2"
     assert isinstance(config["int1"], int)
