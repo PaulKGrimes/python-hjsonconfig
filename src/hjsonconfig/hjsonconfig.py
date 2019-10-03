@@ -61,6 +61,7 @@ class hjsonconfig(hjson.OrderedDict):
     def __init__(self, *args, **kwds):
         """Inits hjsonconfig class, sets filename and verbosity and
         reads in config key:value pairs from filename if present."""
+        # Use try and except to parse **kwds, so that python 2.7 should work like python 3
         try:
             self.verbose = kwds["verbose"]
         except KeyError:
