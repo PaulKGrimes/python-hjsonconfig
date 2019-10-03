@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from hjsonconfig import *
+from hjsonconfig import hjsonconfig
 
 FIXTURE_DIR = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
@@ -21,7 +21,7 @@ def test_main():
 
 @pytest.mark.datafiles(os.path.join(FIXTURE_DIR, 'test.hjson'))
 def test_loading_file(datafiles):
-    config = hjsonconfig.hjsonconfig(datafiles)
+    config = hjsonconfig.hjsonconfig(filename=datafiles)
     assert config["test1"] == "Test String 1"
     assert config["test2"] == "Test String 2"
     assert isinstance(config["int1"], int)

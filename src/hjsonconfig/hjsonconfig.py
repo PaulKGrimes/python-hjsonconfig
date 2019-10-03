@@ -7,7 +7,6 @@ from pprint import pprint
 
 import hjson
 import jsonmerge
-from pkg_resources import resource_filename
 
 
 def merge(base, head):
@@ -83,43 +82,16 @@ class hjsonconfig(hjson.OrderedDict):
         # Opens use file and assigns corresponding parameters
         if self.verbose:
             print("hjsonconfig._readFile: Reading file: ", filename)
-        try:
-            f = open(filename, 'r')
-            newConfig = hjsonconfig(verbose=self.verbose)
-            newConfig._copyIn(hjson.load(f))
-            f.close()
-            if self.verbose:
-                print("hjsonconfig._readFile: Got config:")
-                pprint(newConfig)
-            newConfig.importConfigFiles()
-        except OSError:
-            if self.verbose:
-                print("hjsonconfig._readFile: OS Error received")
-            try:
-                # File not found in pwd
-                # Look in same directory as current file
-                if self.verbose:
-                    print("hjsonconfig._readFile: Couldn't find config file: ", filename)
-                if self.filename is not None:
-                    if self.verbose:
-                        print("hjsonconfig._readFile: looking in LabEqupiment/config")
-                    newFileName = resource_filename("LabEquipment", "/config/{:s}".format(filename))
-                    if self.verbose:
-                        print("hjsonconfig._readFile: New filename:", newFileName)
-                else:
-                    return None
 
-                # check we aren't setting up an infinite loop
-                if newFileName != filename:
-                    if self.verbose:
-                        print("hjsonconfig._readFile: Trying config file: ", newFileName)
-                    newConfig = hjsonconfig(filename=newFileName, verbose=self.verbose)
-                else:
-                    return None
-            except OSError:
-                if self.verbose:
-                    print("hjsonconfig._readFile: File {:s} not found.".format(filename))
-                return None
+        f = open(filename, 'r')
+        newConfig = hjsonconfig(verbose=self.verbose)
+        newConfig._copyIn(hjson.load(f))
+        f.close()
+        if self.verbose:
+            print("hjsonconfig._readFile: Got config:")
+            pprint(newConfig)
+        newConfig.importConfigFiles()
+
         return newConfig
 
     def _copyIn(self, odict):
