@@ -21,7 +21,7 @@ def test_main():
 
 @pytest.mark.datafiles(FIXTURE_DIR)
 def test_loading_file(datafiles):
-    testFile = os.path.join(datafiles, 'test.hjson')
+    testFile = os.path.join(str(datafiles), 'test.hjson')
     config = hjsonconfig.hjsonconfig(filename=testFile)
     assert config["test1"] == "Test String 1"
     assert config["test2"] == "Test String 2"
