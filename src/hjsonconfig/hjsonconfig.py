@@ -58,16 +58,24 @@ class hjsonconfig(hjson.OrderedDict):
         filename: The name of the config file last imported. Helps provide a
                 basic check for recursive loops of config files
     """
-    def __init__(self, *args, filename=None, verbose=False, **kwds):
+    def __init__(self, *args, **kwds):
         """Inits hjsonconfig class, sets filename and verbosity and
         reads in config key:value pairs from filename if present."""
+        try:
+            self.verbose = kwds["verbose"]
+        except KeyError:
+            self.verbose = False
+        try:
+            self.filename = kwds["filename"]
+        except KeyError:
+            self.filename = None
+
         super(hjson.OrderedDict, self).__init__(*args, **kwds)
-        self.verbose = verbose
-        self.filename = filename
-        if filename is not None:
+
+        if self.filename is not None:
             if self.verbose:
-                print("hjsonconfig.__init__: Initializing from {:s}".format(filename))
-            self.readFile(filename)
+                print("hjsonconfig.__init__: Initializing from {:s}".format(self.filename))
+            self.readFile(self.filename)
 
     def _readFile(self, filename):
         """Reads an .hjson configuration file and returns it as a new
