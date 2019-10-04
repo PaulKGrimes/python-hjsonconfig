@@ -1,9 +1,9 @@
-hjsonconfig
+HjsonConfig
 ===========
 
 .. testsetup::
 
-    from hjsonconfig import *
+    from HjsonConfig import *
 
-.. automodule:: hjsonconfig
+.. automodule:: HjsonConfig
     :members:

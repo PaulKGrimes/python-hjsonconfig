@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use hjsonconfig in a project::
+To use HjsonConfig in a project::
 
-	import hjsonconfig
+	import HjsonConfig
