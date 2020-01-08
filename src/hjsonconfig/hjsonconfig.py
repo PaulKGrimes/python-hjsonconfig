@@ -10,17 +10,17 @@ import jsonmerge
 
 
 def merge(base, head):
-    """Merge two HjsonConfig objects together, using jsonmerge.merge. Keys in
+    """Merge two hjsonconfig objects together, using jsonmerge.merge. Keys in
     head overwrite duplicate keys in base.
 
     Args:
-        base: an HjsonConfig or OrderedDict object that represents the
+        base: an hjsonconfig or OrderedDict object that represents the
             base of the output.
-        head: an HjsonConfig or OrderedDict object to be merged on to the base,
+        head: an hjsonconfig or OrderedDict object to be merged on to the base,
             with duplicated entries overwriting entries in base.
 
     Returns:
-        An HjsonConfig object containing the merged key:value pairs
+        An hjsonconfig object containing the merged key:value pairs
     """
     try:
         if base is not None:
@@ -33,13 +33,13 @@ def merge(base, head):
     merged = jsonmerge.merge(base, head)
 
     # We copy merged into out, to ensure that the returned value is an
-    # HjsonConfig obect rather than an OrderedDict object.
-    out = HjsonConfig(verbose=verbose)
+    # hjsonconfig obect rather than an OrderedDict object.
+    out = hjsonconfig(verbose=verbose)
     out._copy_in(merged)
     return out
 
 
-class HjsonConfig(hjson.OrderedDict):
+class hjsonconfig(hjson.OrderedDict):
     """A class to handle reading configurations in hjson files, which
     may include references to other hjson files via "config-file" entries.
 
@@ -59,7 +59,7 @@ class HjsonConfig(hjson.OrderedDict):
                 basic check for recursive loops of config files
     """
     def __init__(self, *args, **kwds):
-        """Inits HjsonConfig class, sets filename and verbosity and
+        """Inits hjsonconfig class, sets filename and verbosity and
         reads in config key:value pairs from filename if present."""
         # Use try and except to parse **kwds, so that python 2.7 should work like python 3
         try:
@@ -75,29 +75,29 @@ class HjsonConfig(hjson.OrderedDict):
 
         if self.filename is not None:
             if self.verbose:
-                print("HjsonConfig.__init__: Initializing from {:s}".format(self.filename))
+                print("hjsonconfig.__init__: Initializing from {:s}".format(self.filename))
             self.read_file(self.filename)
 
     def _read_file(self, filename):
         """Reads an .hjson configuration file and returns it as a new
-        HjsonConfig object
+        hjsonconfig object
 
         Args:
             filename: path to file to be read
 
         Returns:
-            An HjsonConfig object, read from filename.
+            An hjsonconfig object, read from filename.
         """
         # Opens use file and assigns corresponding parameters
         if self.verbose:
-            print("HjsonConfig._readFile: Reading file: ", filename)
+            print("hjsonconfig._readFile: Reading file: ", filename)
 
         f = open(filename, 'r')
-        newConfig = HjsonConfig(verbose=self.verbose)
+        newConfig = hjsonconfig(verbose=self.verbose)
         newConfig._copy_in(hjson.load(f))
         f.close()
         if self.verbose:
-            print("HjsonConfig._readFile: Got config:")
+            print("hjsonconfig._readFile: Got config:")
             pprint(newConfig)
         newConfig.import_config_files()
 
@@ -107,7 +107,7 @@ class HjsonConfig(hjson.OrderedDict):
         """Deletes all this objects data and copies in data from odict
 
         Args:
-            odict: an OrderedDict or HjsonConfig object"""
+            odict: an OrderedDict or hjsonconfig object"""
         if odict is not None:
             self.clear()
             for k in odict.keys():
@@ -123,7 +123,7 @@ class HjsonConfig(hjson.OrderedDict):
         # Have to delete data from self and then copy data from readFile return value.
         if self.filename is None:
             if self.verbose:
-                print("HjsonConfig.readFile: setting filename: ", filename)
+                print("hjsonconfig.readFile: setting filename: ", filename)
             self.filename = filename
         self._copy_in(self._read_file(filename))
 
@@ -141,26 +141,26 @@ class HjsonConfig(hjson.OrderedDict):
             if self["config-file"] is not None:
                 config_file = self["config-file"]
                 if self.verbose:
-                    print("HjsonConfig.importConfigFiles: Import from {:s}".format(config_file))
+                    print("hjsonconfig.importConfigFiles: Import from {:s}".format(config_file))
 
         except KeyError:
             if self.verbose:
-                print("HjsonConfig.importConfigFiles: No config-files to import")
+                print("hjsonconfig.importConfigFiles: No config-files to import")
             config_file = None
 
         if config_file is not None:
             # Might be a list of fileNames or a single filename
             if isinstance(config_file, list):
                 if self.verbose:
-                    print("HjsonConfig.importConfigFiles: Importing config-files {:s}".format(config_file))
-                file_config = HjsonConfig(verbose=self.verbose)
+                    print("hjsonconfig.importConfigFiles: Importing config-files {:s}".format(config_file))
+                file_config = hjsonconfig(verbose=self.verbose)
                 for c in config_file:
                     f = self._read_file(c)
                     file_config._copy_in(jsonmerge.merge(file_config, f))
             else:
                 if self.verbose:
-                    print("HjsonConfig.importConfigFiles: Importing config-file {:s}".format(config_file))
-                file_config = HjsonConfig(filename=config_file, verbose=self.verbose)
+                    print("hjsonconfig.importConfigFiles: Importing config-file {:s}".format(config_file))
+                file_config = hjsonconfig(filename=config_file, verbose=self.verbose)
             if self.verbose:
                 pprint(file_config)
 
@@ -176,8 +176,8 @@ class HjsonConfig(hjson.OrderedDict):
 
 
 def main():
-    """Creates an empty, verbose HjsonConfig object"""
-    config = HjsonConfig(verbose=True)
+    """Creates an empty, verbose hjsonconfig object"""
+    config = hjsonconfig(verbose=True)
 
     return config
 
