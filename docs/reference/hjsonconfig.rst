@@ -1,4 +1,4 @@
-hjsonconfig
+HjsonConfig
 ===========
 
 .. testsetup::
