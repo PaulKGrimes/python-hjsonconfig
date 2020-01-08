@@ -24,7 +24,7 @@ def read(*names, **kwargs):
 
 
 setup(
-    name='HjsonConfig',
+    name='hjsonconfig',
     version='0.0.3',
     license='MIT license',
     description='A package for reading config files written in hjson, with recursive includes of additional files.',
@@ -73,8 +73,7 @@ setup(
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=[
         'hjson',
-        'jsonmerge',
-        'pytest'
+        'jsonmerge'
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={

@@ -6,8 +6,7 @@ source =
 [run]
 branch = true
 source =
-    HjsonConfig
-    tests
+    hjsonconfig
 parallel = true
 
 [report]

@@ -3,7 +3,7 @@ HjsonConfig
 
 .. testsetup::
 
-    from HjsonConfig import *
+    from hjsonconfig import *
 
-.. automodule:: HjsonConfig
+.. automodule:: hjsonconfig
     :members:

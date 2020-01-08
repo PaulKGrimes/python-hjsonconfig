@@ -22,7 +22,7 @@ if os.getenv('SPELLCHECK'):
 
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'HjsonConfig'
+project = u'hjsonconfig'
 year = '2019-1'
 author = u'Paul Grimes'
 copyright = '{0}, {1}'.format(year, author)

@@ -14,25 +14,25 @@ Overview
         | |codecov|
     * - package
       - | |commits-since|
-.. |docs| image:: https://readthedocs.org/projects/python-HjsonConfig/badge/?style=flat
-    :target: https://readthedocs.org/projects/python-HjsonConfig
+.. |docs| image:: https://readthedocs.org/projects/python-hjsonconfig/badge/?style=flat
+    :target: https://readthedocs.org/projects/python-hjsonconfig
     :alt: Documentation Status
 
-.. |travis| image:: https://travis-ci.org/paulkgrimes/python-HjsonConfig.svg?branch=master
+.. |travis| image:: https://travis-ci.org/paulkgrimes/python-hjsonconfig.svg?branch=master
     :alt: Travis-CI Build Status
-    :target: https://travis-ci.org/paulkgrimes/python-HjsonConfig
+    :target: https://travis-ci.org/paulkgrimes/python-hjsonconfig
 
-.. |requires| image:: https://requires.io/github/PaulKGrimes/python-HjsonConfig/requirements.svg?branch=master
-     :target: https://requires.io/github/PaulKGrimes/python-HjsonConfig/requirements/?branch=master
+.. |requires| image:: https://requires.io/github/PaulKGrimes/python-hjsonconfig/requirements.svg?branch=master
+     :target: https://requires.io/github/PaulKGrimes/python-hjsonconfig/requirements/?branch=master
      :alt: Requirements Status
 
-.. |codecov| image:: https://codecov.io/gh/PaulKGrimes/python-HjsonConfig/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/PaulKGrimes/python-HjsonConfig
+.. |codecov| image:: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/PaulKGrimes/python-hjsonconfig
   :alt: Coverage Status
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-HjsonConfig/v0.0.3.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/paulkgrimes/python-hjsonconfig/v0.0.3.svg
     :alt: Commits since latest release
-    :target: https://github.com/paulkgrimes/python-HjsonConfig/compare/v0.0.3...master
+    :target: https://github.com/paulkgrimes/python-hjsonconfig/compare/v0.0.3...master
 
 
 .. end-badges
@@ -46,13 +46,13 @@ Installation
 
 ::
 
-    pip install HjsonConfig
+    pip install hjsonconfig
 
 Documentation
 =============
 
 
-https://python-HjsonConfig.readthedocs.io/
+https://python-hjsonconfig.readthedocs.io/
 
 
 Development
